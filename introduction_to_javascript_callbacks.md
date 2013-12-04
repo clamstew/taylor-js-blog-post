@@ -118,4 +118,53 @@ To recap, we have covered that:
 	<img src="finalcode.png" />
 </div>
 
+Here is that same code for ultimate copy and pasting to an html file:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Robot Butler</title>
+</head>
+<body>
+
+	<input type="button" id="submit-button" value="Press Me" />
+
+	<!-- We must include the jQuery js file to make the callback section work -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+	<!-- Here is the main javascript we are writing -->
+	<script type="text/javascript">
+		// Our robot butler who takes commands
+		// as a javascript function
+
+		var butler = function(x) {
+			x();
+		};
+
+		var greet = function() {
+			alert('Hello!');
+		};
+
+		// Running this should alert "Hello!"
+		// in a javascript pop-up box
+		// this will run right as the file is loaded
+		butler(greet);
+
+		// ======= Section on call back functions ==========
+
+		$('#submit-button').on('click', function(e) {
+			alert("I'm a button!");
+		});
+
+		var greet = function() { alert('hi'); };
+		// this will run 2 seconds after the page loads
+		setTimeout(greet, 2000);
+	</script>
+
+</body>
+</html>
+```
+
 
