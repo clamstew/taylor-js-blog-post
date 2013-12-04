@@ -5,12 +5,21 @@
 By now it should be clear that we can pass variables and objects into Javascript functions as arguments. For example, given:
 
 ```javascript
+// assign the string "Bob" to a variable 'name'
 var name = "Bob";
+// assign a function that returns a phrase as uppercase string
+// and you pass in the phrase as a parameter
 var yell = function(phrase) {
 	return phrase.toUpperCase();
 };
+// reassign a function yell to another variable shout
 var shout = yell;
+// assign function shout with a name passed in to 
+// a new variable 'yelled'
 var yelled = shout(name);
+
+// call function yelled(); like this:
+yelled();
 ```
 	
 Calling *yelled* here would return "BOB", as *shout(name)* is passed to *yell* which calls *.toUpperCase* on whatever is passed to it.
@@ -38,7 +47,6 @@ Let's make our robot in code:
 ```javascript
 // Our robot butler who takes commands
 // as a javascript function
-	
 var butler = function(x) {
 	x();
 }
@@ -53,11 +61,10 @@ var greet = function() {
 	
 // Running this should alert "Hello!"
 // in a javascript pop-up box
-	
 butler(greet);
 ```
 	
-Try this out in the browser console (press **command + option + i** if you're on a Mac AND are using Chrome -- also this shortcut will bring up Inspector in Firefox) to see if this works.
+Try this out in a file of your own.  Open up any text editor, like textedit on a mac.  Name the file `index.html` and save it to your desktop.  Open that file in a browser like Chrome or Firefox.  
 
 We actually passed a function to another function as an argument! Neat!
 
